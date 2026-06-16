@@ -28,7 +28,7 @@ export default function StreamPage() {
           setInput("");
           handleSubmit(e);
         }}
-        className="fixed bottom-5 rounded w-full max-w-md mx-auto left-0 right-0 p-4 bg-zinc-50"
+        className="fixed bottom-5 w-full max-w-md mx-auto left-0 right-0 p-4 bg-zinc-900"
       >
         <div className="flex gap-2">
           <input
