@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js AI App
+
+A Next.js 16 application that demonstrates practical AI workflows with the Vercel AI SDK, including chat, streaming responses, structured output, and multimodal file analysis.
+
+## Features
+
+- Chat completion API route and UI
+- Streaming text responses
+- Structured object and array generation with Zod schemas
+- Multimodal chat with image and PDF attachments
+- Provider examples for Groq, OpenAI, and Google Gemini
+- App Router API routes built with native `Request` and `Response`
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Vercel AI SDK
+- Groq, OpenAI, and Google AI SDK providers
+- Zod
+
+## Project Structure
+
+```text
+src/app
+├── api
+│   ├── chat
+│   ├── completion
+│   ├── multi-modal-chat
+│   ├── stream
+│   ├── structured-array
+│   └── structured-data
+└── ui
+    ├── chat
+    ├── completion
+    ├── multi-modal-chat
+    ├── stream
+    ├── structured-array
+    └── structured-data
+```
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a local environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+If `.env.example` is not present, create `.env.local` manually and add the keys for the providers you plan to use:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+OPENAI_API_KEY=your_openai_api_key
+GOOGLE_GENERATIVE_AI_API_KEY=your_google_ai_studio_api_key
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-## Learn More
+## Multimodal Chat
 
-To learn more about Next.js, take a look at the following resources:
+The multimodal chat example is available at:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```text
+/ui/multi-modal-chat
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+It sends messages to:
 
-## Deploy on Vercel
+```text
+/api/multi-modal-chat
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The current route uses Google Gemini through `@ai-sdk/google`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```ts
+google("gemini-3.5-flash")
+```
+
+This model supports image and PDF inputs. A Google AI Studio API key is required in `GOOGLE_GENERATIVE_AI_API_KEY`.
+
+## Notes
+
+- Keep API keys in `.env.local`; environment files are ignored by Git.
+- Free provider tiers can change. Check provider pricing and rate limits before production use.
+- Review the installed Next.js documentation in `node_modules/next/dist/docs/` before changing route handler conventions.
