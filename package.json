@@ -9,10 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^3.0.83",
     "@ai-sdk/groq": "^3.0.41",
     "@ai-sdk/openai": "^3.0.71",
     "@ai-sdk/react": "^3.0.207",
-    "ai": "^6.0.205",
+    "ai": "^6.0.208",
     "next": "16.2.9",
     "prettier": "^3.8.4",
     "react": "19.2.4",
