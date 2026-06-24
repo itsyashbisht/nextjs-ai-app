@@ -75,6 +75,7 @@ export default function GenerateSpeechPage() {
     return () => {
       if (audioUrlRef.current) {
         URL.revokeObjectURL(audioUrlRef.current);
+        audioRef.current = null;
       }
 
       if (audioRef.current) {
