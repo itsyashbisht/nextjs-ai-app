@@ -12,8 +12,10 @@
     "@ai-sdk/elevenlabs": "^2.0.36",
     "@ai-sdk/google": "^3.0.83",
     "@ai-sdk/groq": "^3.0.41",
+    "@ai-sdk/mcp": "^1.0.52",
     "@ai-sdk/openai": "^3.0.71",
     "@ai-sdk/react": "^3.0.207",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "ai": "^6.0.208",
     "next": "16.2.9",
     "prettier": "^3.8.4",
@@ -29,6 +31,6 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^6.0.3"
   }
 }
